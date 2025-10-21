@@ -1,0 +1,1880 @@
+/* ============================================================
+   TP CSS - GAMEZONE : SALLE DE JEU
+   ============================================================
+   
+   PALETTE DE COULEURS À UTILISER :
+   
+   - Couleur primaire (violet gaming) : #7C3AED
+   - Couleur primaire foncée : #5B21B6
+   - Couleur secondaire (cyan) : #06B6D4
+   - Couleur accent (orange) : #F97316
+   - Fond sombre : #0F172A
+   - Fond moyen : #1E293B
+   - Fond clair : #334155
+   - Texte principal : #F8FAFC
+   - Texte secondaire : #CBD5E1
+   - Succès (vert) : #10B981
+   - Erreur (rouge) : #EF4444
+   
+   INSTRUCTIONS :
+   
+   Ce TP est divisé en 3 niveaux de difficulté.
+   Complétez les sélecteurs marqués par "selecteur" en suivant 
+   les instructions dans les commentaires.
+
+   Les propriétés ou détails CSS sont déjà fournies, vous devez uniquement
+   trouver les bons sélecteurs et les propriétés CSS qui manquent.
+
+   CONSEILS :
+   - Lisez bien le HTML pour comprendre la structure
+   - Testez régulièrement dans le navigateur
+   - Utilisez les outils de développement (F12)
+   - N'hésitez pas à consulter la documentation MDN
+   
+   ============================================================ */
+
+/* ============================================================
+   NIVEAU 1 - DÉBUTANT : Sélecteurs de base, couleurs, typographie
+   ============================================================ */
+/* ------------------------------------------------------------
+   Reset et configuration de base
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 1/120]
+   Déclaration CSS pour TOUS les éléments (*) :
+   - Retirer les marges et padding par défaut (0)
+   - Définir box-sizing à border-box
+*/
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* 
+   [SÉLECTEUR 2/120]
+   Déclaration CSS pour l'élément <body> :
+   - Police : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+   - Couleur de fond : #0F172A (fond sombre)
+   - Couleur de texte : #F8FAFC (texte principal)
+   - Hauteur de ligne : 1.6
+*/
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #0F172A;
+   color: #F8FAFC;
+   line-height: 1.6;
+}
+
+
+/* 
+   [SÉLECTEUR 3/120]
+   Déclaration CSS pour tous les liens (<a>) :
+   - Couleur : hériter de l'élément parent
+   - Supprimer le soulignement (text-decoration)
+*/
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+
+
+/* ------------------------------------------------------------
+   Header et Navigation
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 4/120]
+   Déclaration CSS pour l'en-tête principal avec l'id "site-header" :
+   - Couleur de fond : #1E293B (fond moyen)
+   - Padding vertical : 1rem
+   - Position : sticky (pour le fixer en haut lors du scroll)
+   - Top : 0
+   - z-index : 1000 (pour qu'il reste au-dessus des autres éléments)
+*/
+#site-header {
+   background-color: #1E293B;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+}
+
+/* 
+   [SÉLECTEUR 5/120]
+   Déclaration CSS pour la classe "navbar" :
+   - Largeur maximale : 1200px
+   - Marges horizontales : auto (pour centrer)
+   - Padding horizontal : 2rem
+   - Display : flex (pour aligner les éléments horizontalement)
+   - Justifier le contenu : space-between
+   - Aligner les éléments : center
+*/
+.navbar {
+   max-width: 1200 px;
+   margin-top: auto;
+   margin-bottom: auto;
+   padding: 0 2rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+
+/* 
+   [SÉLECTEUR 6/120]
+   Déclaration CSS pour la classe "logo-text" :
+   - Taille de police : 1.5rem
+   - Épaisseur de police : bold
+   - Couleur : #7C3AED (couleur primaire)
+   - Marge gauche : 0.5rem
+*/
+.logo-text {
+   font-size: 1.5rem;
+   font-weight: bold;
+   color: #7C3AED;
+   margin-left: 0.5rem;
+}
+
+/* 
+   [SÉLECTEUR 7/120]
+   Déclaration CSS pour la liste <ul> avec la classe "nav-links" :
+   - Style de liste : none (supprimer les puces)
+   - Display : flex
+   - Gap (espacement entre les éléments) : 2rem
+*/
+.nav-links {
+   list-style: none;
+   display: flex;
+   gap: 2rem;
+}
+
+/* 
+   [SÉLECTEUR 8/120]
+   Déclaration CSS pour le bouton Réserver :
+   - Couleur de fond : #7C3AED (couleur primaire)
+   - Couleur de texte : #F8FAFC (texte principal)
+   - Padding vertical : 0.75rem
+   - Padding horizontal : 1.5rem
+   - Border-radius : 0.5rem (coins arrondis)
+   - Épaisseur de police : 600
+   - Transition : 0.3s
+*/
+.btn-primary {
+   background-color: #7C3AED;
+   color: #F8FAFC;
+   padding: 0.75rem 1.5rem;
+   border-radius: 0.5rem;
+   font-weight: 600;
+   transition: 0.3s;
+}
+
+
+/* ------------------------------------------------------------
+   Section Hero
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 9/120]
+   Déclaration CSS pour la classe "hero" :
+   - Une position qui est relative
+   - Hauteur qui prend toute la hauteur de la fenêtre (100vh)
+   - Display : flex
+   - Justifier le contenu : center
+   - Aligner les éléments : center
+   - Image de fond : url avec l'image Unsplash ci-dessous
+   - Taille de l'image de fond : cover
+   - Position de l'image de fond : center
+*/
+.hero {
+   position: relative;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920&h=1080&fit=crop');
+   background-size: cover;
+   background-position: center;
+}
+
+
+/* 
+   [SÉLECTEUR 10/120]
+   Déclaration CSS pour la classe "hero-overlay" :
+   INDICE : Cette classe crée un filtre sombre sur l'image de fond
+   - Position : absolute
+   - Top, left, right, bottom : 0 (pour couvrir tout l'élément parent)
+   - Couleur de fond : rgba(15, 23, 42, 0.85) (noir transparent à 85%)
+*/
+.hero-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(15, 23, 42, 0.85);
+}
+
+/* 
+   [SÉLECTEUR 11/120]
+   Déclaration CSS pour la classe "hero-content" :
+   - Position : relative (pour être au-dessus de l'overlay)
+   - z-index : 1
+   - Alignement du texte : center
+   - Largeur maximale : 1200px
+   - Padding : 2rem
+*/
+.hero-content {
+   position: relative;
+   z-index: 1;
+   text-align: center;
+   max-width: 1200px;
+   padding: 2rem;
+}
+
+
+/* 
+   [SÉLECTEUR 12/120]
+   Déclaration CSS pour le titre principal :
+   - Taille de police : 4rem
+   - Épaisseur de police : bold
+   - Marge bottom : 1rem
+*/
+.hero-title {
+   font-size: 4rem;
+   font-weight: bold;
+   margin-bottom: 1rem;
+}
+
+
+/* 
+   [SÉLECTEUR 13/120]
+   Déclaration CSS pour la classe qui classe met en évidence le mot "GameZone"
+   - Couleur : #7C3AED (couleur primaire)
+*/
+
+.highlight {
+   color: #7C3AED;
+}
+
+
+/* 
+   [SÉLECTEUR 14/120]
+   Déclaration CSS pour le sous-titre avec la section hero
+   - Taille de police : 1.25rem
+   - Couleur : #CBD5E1 (texte secondaire)
+   - Marge bottom : 2rem
+   - Largeur maximale : 600px
+   - Marges horizontales : auto (pour centrer)
+*/
+.hero-subtitle {
+   font-size: 1.25rem;
+   color: #CBD5E1;
+   margin-bottom: 2rem;
+   max-width: 600px;
+   margin: 0 auto;
+}
+
+
+/* ------------------------------------------------------------
+   Container et sections
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 15/120]
+   Déclaration CSS pour le container principal :
+   - Largeur maximale : 1200px
+   - Marges horizontales : auto
+   - Padding horizontal : 2rem
+*/
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 2rem;
+}
+
+
+/* 
+   [SÉLECTEUR 16/120]
+   Déclaration CSS pour toutes les sections (<section>) :
+   - Padding vertical : 5rem
+*/
+section {
+   padding: 5rem 0;
+}
+
+/* 
+   [SÉLECTEUR 17/120]
+   Déclaration CSS pour le titre de la section :
+   - Taille de police : 2.5rem
+   - Épaisseur de police : bold
+   - Marge bottom : 1rem
+   - Alignement du texte : center
+*/
+.section-title {
+   font-size: 2.5rem;
+   font-weight: bold;
+   margin-bottom: 1rem;
+   text-align: center;
+}
+
+/* 
+   [SÉLECTEUR 18/120]
+   Déclaration CSS pour la description de la section :
+   - Taille de police : 1.125rem
+   - Couleur : #CBD5E1 (texte secondaire)
+   - Alignement du texte : center
+   - Marge bottom : 3rem
+   - Largeur maximale : 700px
+   - Marges horizontales : auto
+*/
+.section-description {
+   font-size: 1.125rem;
+   color: #CBD5E1;
+   text-align: center;
+   margin-bottom: 3rem;
+   max-width: 700px;
+   margin: auto;
+}
+
+
+/* ============================================================
+   NIVEAU 2 - INTERMÉDIAIRE Pseudo-classes, sélecteurs combinés, flexbox
+   ============================================================ */
+/* ------------------------------------------------------------
+   Navigation - États interactifs
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 19/120]
+   Déclaration CSS pour les liens de navigation au SURVOL :
+   INDICE : Utiliser la pseudo-classe :hover sur les liens dans "nav-links"
+   - Couleur : #7C3AED (couleur primaire)
+*/
+.nav-links a:hover {
+   color: #7C3AED;
+}
+
+/* 
+   [SÉLECTEUR 20/120]
+   Déclaration CSS pour les liens de navigation ACTIFS :
+   INDICE : Utiliser la classe "active" sur les liens "nav-link"
+   Sélecteur combiné : .nav-link qui a aussi la classe .active
+   - Couleur : #7C3AED (couleur primaire)
+   - Épaisseur de police : bold
+*/
+.nav-links a:active {
+   color: #7C3AED;
+   font-weight: bold;
+}
+
+
+/* 
+   [SÉLECTEUR 21/120]
+   Déclaration CSS pour le bouton primaire au SURVOL :
+   INDICE : Pseudo-classe :hover sur "btn-primary"
+   - Couleur de fond : #5B21B6 (couleur primaire foncée)
+   - Transform : translateY(-2px) (légère montée du bouton)
+   - Box-shadow : 0 10px 30px rgba(124, 58, 237, 0.3)
+*/
+.btn-primary:hover {
+   background-color: #5B21B6;
+   transform: translateY(-2px);
+   box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 22/120]
+   Déclaration CSS pour tous les boutons secondaires au SURVOL :
+   - Couleur de fond : #F8FAFC
+   - Couleur : #0F172A
+*/
+.btn-hero:hover {
+   background-color: #F8FAFC;
+   color: #0F172A;
+}
+
+
+/* ------------------------------------------------------------
+   Hero - Boutons et statistiques
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 23/120]
+   Déclaration CSS pour la classe "hero-buttons" :
+   - Display : flex
+   - un ecart (gap) : 1rem
+   - Justifier le contenu : center
+   - une marge en bas : 3rem
+*/
+.hero-buttons {
+   display: flex;
+   gap: 1rem;
+   justify-content: center;
+   margin-bottom: 3rem;
+}
+
+/* 
+   [SÉLECTEUR 24/120]
+   Déclaration CSS pour TOUS les boutons dans "hero-buttons" :
+   INDICE : Sélecteur descendant - les éléments avec classe "btn-hero" 
+   qui sont à l'intérieur de "hero-buttons"
+   - une marge interne : 1rem 2rem
+   - des coins arrondis : 0.5rem
+   - Épaisseur de police : 600
+   - Transition : 0.3s
+   - taille de police : 1.125rem
+*/
+.hero-buttons .btn-hero{
+   transition: 0.3s;
+   padding: 1rem 2rem;
+   border-radius: 0.5rem;
+   font-weight: 600;
+   font-size: 1.125rem;
+}
+
+
+/* 
+   [SÉLECTEUR 25/120]
+   Déclaration CSS pour les boutons hero avec la classe "primary" :
+   Syntaxe : .btn-hero.primary (sans espace entre les classes)
+   - Couleur de fond : #7C3AED
+   - Couleur de texte : #F8FAFC
+*/
+.btn-hero.primary {
+   background-color: #7C3AED;
+   color: #F8FAFC;
+}
+
+
+/* 
+   [SÉLECTEUR 26/120]
+   Déclaration CSS pour les boutons hero avec la classe "secondary" :
+   - Couleur de fond : transparent
+   - Couleur de texte : #F8FAFC
+   - Bordure : 2px solid #F8FAFC
+*/
+.btn-hero.secondary {
+   background-color: transparent;
+   color: #F8FAFC;
+   border: 2px solid #F8FAFC;
+}
+
+/* 
+   [SÉLECTEUR 27/120]
+   Déclaration CSS pour la classe "hero-stats" :
+   - Display : flex
+   - un ecart (gap) : 3rem
+   - Justifier le contenu : center
+*/
+.hero-stats {
+   display: flex;
+   gap: 3rem;
+   justify-content: center;
+}
+
+
+/* 
+   [SÉLECTEUR 28/120]
+   Déclaration CSS pour la classe "stat-item" :
+   - Display : flex
+   - un ecart (gap) : 1rem
+   - Aligner les éléments : center
+*/
+.stat-item {
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+}
+
+/* 
+   [SÉLECTEUR 29/120]
+   Déclaration CSS pour les icônes DANS les "stat-item" :
+   INDICE : Sélecteur descendant - l'élément <i> qui est dans "stat-item"
+   - Taille de police : 2rem
+   - Couleur : #7C3AED
+*/
+.stat-item i {
+   font-size: 2rem;
+   color: #7C3AED;
+}
+
+/* 
+   [SÉLECTEUR 30/120]
+   Déclaration CSS pour les nombres DANS la div "stat-item" :
+   - Display : block
+   - Taille de police : 1.5rem
+   - Épaisseur de police : bold
+*/
+.stat-number {
+   display: block;
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+
+/* 
+   [SÉLECTEUR 31/120]
+   Déclaration CSS pour les labels DANS la div "stat-item" :
+   - Display : block
+   - Taille de police : 0.875rem
+   - Couleur : #CBD5E1
+*/
+.stat-label {
+   display: block;
+   font-size: 0.875rem;
+   color: #CBD5E1;
+}
+
+/* ------------------------------------------------------------
+   Services - Grille
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 32/120]
+   Déclaration CSS pour la classe "services-grid" :
+   - Display : grid
+   - Grid-template-columns : repeat(3, 1fr) (3 colonnes égales)
+   - ecart : 2rem
+*/
+.services-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+   padding-top: 3rem;
+}
+
+/* 
+   [SÉLECTEUR 33/120]
+   Déclaration CSS pour la classe "service-card" :
+   - Couleur de fond : #1E293B
+   - marge interne : 2rem
+   - les coins arrondis : 1rem
+   - Transition : 0.3s
+*/
+.service-card {
+   transition: 0.3s;
+   background-color: #1E293B;
+   padding: 2rem;
+   border-radius: 1rem;
+}
+
+
+/* 
+   [SÉLECTEUR 34/120]
+   Déclaration CSS pour les "service-card" au SURVOL :
+   INDICE : Pseudo-classe :hover
+   - Transform : translateY(-10px) (faire monter la carte)
+   - Box-shadow : 0 20px 40px rgba(0, 0, 0, 0.3)
+*/
+.service-card:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 35/120]
+   Déclaration CSS pour la classe "service-icon" :
+   - Couleur de fond : rgba(124, 58, 237, 0.2)
+   - Couleur : #7C3AED
+   - Largeur et hauteur : 4rem
+   - les coins arrondis : 50% (pour faire un cercle)
+   - Display : flex
+   - Justifier le contenu et aligner : center
+   - Marge externe en bas : 1.5rem
+   - Taille de police : 2rem
+*/
+.service-icon {
+   background-color: rgba(124, 58, 237, 0.2);
+   color:#7C3AED;
+   height: 4rem;
+   width: 4rem;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 1.5rem;
+   font-size: 2rem;
+}
+
+
+/* 
+   [SÉLECTEUR 36/120]
+   Déclaration CSS pour le titre de la section  service 
+   - Taille de police : 1.25rem
+   - Épaisseur de police : bold
+   - Marge externe en bas : 1rem
+*/
+.services h2 {
+   font-size: 2.5rem;
+   font-weight: bold;
+   margin-bottom: 1rem;
+}
+
+/* 
+   [SÉLECTEUR 37/120]
+   Déclaration CSS pour la description de chaque service : 
+   - Couleur : #CBD5E1
+   - Marge bottom : 1.5rem
+*/
+.service-description {
+   color: #CBD5E1;
+   margin-bottom: 1.5rem;
+}
+
+
+/* 
+   [SÉLECTEUR 38/120]
+   Déclaration CSS pour la classe "service-features" :
+   - Style de liste : none
+*/
+.service-features {
+   list-style: None;
+}
+
+
+/* 
+   [SÉLECTEUR 39/120]
+   Déclaration CSS pour CHAQUE élément <li> DANS "service-features" :
+   INDICE : Sélecteur descendant .service-features li
+   - Display : flex
+   - un ecart (gap) : 0.5rem
+   - Aligner les éléments : center
+   - Padding vertical : 0.5rem
+   - Couleur : #CBD5E1
+*/
+.service-features li {
+   display: flex;
+   gap: 0.5rem;
+   align-items: center;
+   padding: 0.5rem 0;
+   color: #CBD5E1;
+}
+
+
+/* 
+   [SÉLECTEUR 40/120]
+   Déclaration CSS pour les icônes DANS les éléments de "service-features" :
+   INDICE :  ciblage des <i> DANS les <li> de "service-features"
+   - Couleur : #10B981 (vert succès)
+   - Taille de police : 0.875rem
+*/
+.service-features i {
+   color: #10B981;
+   font-size: 0.875;
+}
+
+
+/* ============================================================
+   NIVEAU 3 - MAÎTRISE Sélecteurs avancés, transitions complexes, nth-child
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Services - Carte premium
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 41/120]
+   Déclaration CSS pour les cartes de service avec la classe "premium" :
+   INDICE : Un élément avec les deux classes "service-card" ET "premium"
+   - une bordure de 2px solid et de la couleur #7C3AED
+   - Position : relative
+*/
+.service-card.premium {
+   border: 2px solid #7C3AED;
+   position: relative;
+}
+
+
+/* 
+   [SÉLECTEUR 42/120]
+   Déclaration CSS pour créer un badge "Premium" avec ::before :
+   INDICE : Utiliser le pseudo-élément ::before sur "service-card.premium"
+   - Content : "⭐ Premium"
+   - Position : absolute
+   - Top : -1rem, Right : 1rem
+   - Couleur de fond : #7C3AED
+   - Couleur : #F8FAFC
+   - Une marge interne de  0.5rem 1rem
+   - les coins arrondis : 0.5rem
+   - Taille de police : 0.875rem
+   - Epaisseur de police : 600
+*/
+.service-card.premium::before {
+   content: "⭐ Premium";
+   position: absolute;
+   top: -1rem; Right : 1rem;
+   background-color: #7C3AED;
+   color:#F8FAFC;
+   padding: 0.5rem 1rem;
+   border-radius: 0.5rem;
+   font-size: 0.875rem;
+   font-weight: 600;
+}
+
+
+/* ------------------------------------------------------------
+   Jeux - Grille et cartes
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 43/120]
+   Déclaration CSS pour la classe "games-grid" :
+   - Display : grid
+   - Grid-template-columns : repeat(3, 1fr)
+   - ecart : 2rem
+*/
+.games-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+   padding-top: 3rem;
+}
+
+/* 
+   [SÉLECTEUR 44/120]
+   Déclaration CSS pour la classe "game-card" :
+   - Couleur de fond : #1E293B
+   - coins arrondis : 1rem
+   - Overflow : hidden
+   - Transition : 0.3s
+   - Cursor : pointer
+*/
+.game-card {
+   background-color:#1E293B;
+   border-radius: 1rem;
+   overflow: hidden;
+   transition: 0.3s;
+   cursor: pointer;
+}
+
+
+/* 
+   [SÉLECTEUR 45/120]
+   Déclaration CSS pour les "game-card" au SURVOL :
+   - Transform : translateY(-5px) scale(1.02)
+   - Box-shadow : 0 15px 35px rgba(124, 58, 237, 0.3)
+*/
+.game-card:hover {
+   transform: translateY(-5px) scale(1.02);
+   box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3);
+}
+
+
+/* 
+   [SÉLECTEUR 46/120]
+   Déclaration CSS pour la PREMIÈRE "game-card" avec la classe "featured" :
+   INDICE : combiner les classes .game-card et .featured
+   - Grid-column : span 2 (pour qu'elle prenne 2 colonnes)
+*/
+.game-card.featured {
+   grid-column: span 2;
+}
+
+
+/* 
+   [SÉLECTEUR 47/120]
+   Déclaration CSS pour la classe "game-image" :
+   - Position : relative
+   - Hauteur : 200px
+   - cacher le contenu qui dépasse (overflow)
+*/
+.game-image {
+   position: relative;
+   height: 200px;
+   overflow: hidden;
+}
+
+
+/* 
+   [SÉLECTEUR 48/120]
+   Déclaration CSS pour les images DANS "game-image" :
+   - Largeur et hauteur : 100%
+   - Object-fit : cover
+   - Transition : 0.3s
+*/
+.game-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: 0.3s;
+}
+
+/* 
+    [SÉLECTEUR 49/120]
+    Déclaration CSS pour les images au SURVOL du parent "game-card" :
+    INDICE : Quand on survole "game-card", l'image à l'intérieur doit s'agrandir
+    Syntaxe : .game-card:hover .game-image img
+    - Transform : scale(1.1)
+ */
+.game-card:hover .game-image img {
+   transform: scale(1.1);
+}
+
+/* 
+    [SÉLECTEUR 51/120]
+    Déclaration CSS pour tous les autres "game-badge" (sans la classe "popular") :
+    INDICE : .game-badge (seul, sans .popular)
+    Mais attention, ce sélecteur va cibler tous les badges, donc assurez-vous 
+    que le sélecteur précédent (.game-badge.popular) soit placé APRÈS celui-ci
+    - Couleur de fond : rgba(15, 23, 42, 0.9)
+    - Couleur : #F8FAFC
+    - Padding : 0.25rem 0.75rem
+    - Border-radius : 0.25rem
+    - Font-size : 0.75rem
+    - Font-weight : 600
+ */
+
+.game-badge {
+   background-color: rgba(15, 23, 42, 0.9);
+   color: #F8FAFC;
+   padding: 0.25rem 0.75rem;
+   border-radius: 0.25rem;
+   font-size: 0.75rem;
+   font-weight: 600;
+}
+
+.game-badge {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   display: flex;
+   gap: 0.5rem;
+}
+
+.game-badge1 {
+   background-color: rgba(15, 23, 42, 0.9);
+   color: #F8FAFC;
+   padding: 0.25rem 0.75rem;
+   border-radius: 0.25rem;
+   font-size: 0.75rem;
+   font-weight: 600;
+}
+
+.game-badge1 {
+   position: absolute;
+   top: 1rem;
+   left: 6.5rem;
+   display: flex;
+   gap: 0.5rem;
+}
+
+/* 
+    [SÉLECTEUR 50/120]
+    Déclaration CSS pour la classe "game-badge" avec la classe "popular" :
+    INDICE : .game-badge.popular
+    - Couleur de fond : #F97316 (orange accent)
+    - Couleur : #F8FAFC
+    - Padding : 0.25rem 0.75rem
+    - Border-radius : 0.25rem
+    - Font-size : 0.75rem
+    - Font-weight : 600
+ */
+
+.game-badge.popular {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   display: flex;
+   gap: 0.5rem;
+}
+
+.game-badge.popular {
+   background-color: #F97316;
+   color: #F8FAFC;
+   padding: 0.25rem 0.75rem;
+   border-radius: 0.25rem;
+   font-size: 0.75rem;
+   font-weight: 600;
+}
+
+/* 
+ [SÉLECTEUR 52/120] 
+ Déclaration CSS pour les badges "popular" :
+ - Couleur de fond : #F97316 (orange accent)
+ - Couleur : #F8FAFC
+ - Padding : 0.25rem 0.75rem
+ - Border-radius : 0.25rem
+ - Font-size : 0.75rem
+ - Font-weight : 600
+ */
+
+
+/* [SÉLECTEUR 53/120] 
+   Déclaration CSS pour les informations du jeu" :
+   - Padding : 1.5rem
+*/
+
+.game-info {
+   padding: 1.5rem;
+}
+
+/* [SÉLECTEUR 54/120] - 
+   Déclaration CSS pour le titre du jeu :
+   - Font-size : 1.125rem
+   - Font-weight : bold
+   - Marge bottom : 0.75rem
+*/
+.game-title {
+   font-size: 1.125rem;
+   font-weight: bold;
+   margin-bottom: 0.75rem;
+}
+
+/* [SÉLECTEUR 55/120] - 
+   Déclaration CSS pour les métadonnées du jeu:
+   - Display : flex
+   - Justify-content : space-between
+   - Align-items : center
+   - Marge bottom : 0.75rem
+*/
+.game-meta {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 0.75rem;
+}
+
+/* [SÉLECTEUR 56/120]
+   Déclaration CSS pour les joueurs et le rating :
+   - Font-size : 0.875rem
+   - Couleur : #CBD5E1 (texte secondaire)
+*/
+.game-rating {
+   font-size: 0.875rem;
+   color: #CBD5E1;
+}
+
+/* [SÉLECTEUR 57/120]  
+   Déclaration CSS pour les icônes dans le rating :
+   INDICE : .game-rating i
+   - Couleur : #F97316 (orange accent)
+*/
+.game-rating i {
+   color: #F97316;
+}
+
+/* [SÉLECTEUR 58/120] 
+   Déclaration CSS pour la description du jeu :
+   INDICE : .game-description
+   - Font-size : 0.875rem
+   - Couleur : #CBD5E1 (texte secondaire)
+   - Line-height : 1.5
+*/
+.game-description {
+   font-size: 0.875rem;
+   color: #CBD5E1;
+   line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   Tarifs - Grille et cartes
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 59/120]
+   Déclaration CSS pour la section avec la classe "pricing" :
+   - Couleur de fond : #1E293B
+*/
+.pricing {
+   background-color: #1E293B;
+}
+
+/* 
+   [SÉLECTEUR 60/120]
+   Déclaration CSS pour la grille de tarification" :
+   - Display : grid
+   - Grid-template-columns : repeat(3, 1fr)
+   - Gap : 2rem
+   - Marge bottom : 2rem
+*/
+.pricing-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+   margin-bottom: 2rem;
+   padding-top: 3rem;
+}
+
+
+/* 
+   [SÉLECTEUR 61/120]
+   Déclaration CSS pour la classe "pricing-card" :
+   - Couleur de fond : #0F172A
+   - Padding : 2rem
+   - Border-radius : 1rem
+   - Transition : 0.3s
+*/
+.pricing-card {
+   background-color: #0F172A;
+   padding: 2rem;
+   border-radius: 1rem;
+   transition: 0.3;
+}
+
+/* 
+   [SÉLECTEUR 62/120]
+   Déclaration CSS pour le SURVOL des cartes de tarification :
+   - Transform : translateY(-10px)
+   - Box-shadow : 0 20px 50px rgba(124, 58, 237, 0.4)
+*/
+
+.pricing-card:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 20px 50px rgba(124, 58, 237, 0.4);
+   transition: 0.3s;
+}
+
+/* 
+   [SÉLECTEUR 63/120]
+   Déclaration CSS pour les "pricing-card" avec la classe "popular" :
+   - Bordure : 3px solid #7C3AED
+   - Transform : scale(1.05)
+*/
+.pricing-card.popular {
+   border: 3px solid #7C3AED;
+   transform: scale(1.05);
+}
+
+
+/* 
+   [SÉLECTEUR 64/120]
+   Déclaration CSS pour la classe "pricing-badge" :
+   - Position : absolute
+   - Top : -1rem, Left : 50%
+   - Transform : translateX(-50%)
+   - Couleur de fond : #7C3AED
+   - Couleur : #F8FAFC
+   - Padding : 0.5rem 1.5rem
+   - Border-radius : 2rem
+   - Font-size : 0.875rem
+   - Font-weight : bold
+*/
+.pricing-badge {
+   position: absolute;
+   top: -1rem; left: 50%;
+   transform: translateX(-50%);
+   background-color: #7C3AED;
+   color: #F8FAFC;
+   padding: 0.5rem 1.5rem;
+   border-radius: 2rem;
+   font-size: 0.875rem;
+   font-weight: bold;
+}
+
+/* 
+   [SÉLECTEUR 65/120]
+   Déclaration CSS pour le titre des cartes de tarifs :
+   - Font-size : 1.5rem
+   - Font-weight : bold
+   - Margin-bottom : 0.5rem
+*/
+.pricing-title {
+   font-size: 1.5rem;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+}
+
+
+/* 
+   [SÉLECTEUR 66/120]
+   Déclaration CSS pour le sous-titre des cartes de tarifs :
+   INDICE : .pricing-subtitle
+   - Couleur : #CBD5E1
+   - Margin-bottom : 1.5rem
+*/
+.pricing-subtitle {
+   color: #CBD5E1;
+   margin-bottom: 1.5rem;
+}
+
+/* [SÉLECTEUR 67/120] 
+   Déclaration CSS pour la section du prix :
+   INDICE : .pricing-price
+   - Margin vertical : 2rem
+*/
+.pricing-price {
+   margin: 2rem 0;
+}
+
+
+/* 
+   [SÉLECTEUR 68/120]
+   Déclaration CSS pour le prix :
+   INDICE : .price-amount
+   - Font-size : 3rem
+   - Font-weight : bold
+   - Couleur : #7C3AED
+*/
+.pricing-price {
+   font-size: 3rem;
+   font-weight: bold;
+   color: #7C3AED;
+}
+
+/* 
+   [SÉLECTEUR 69/120]
+   Déclaration CSS pour la période de facturation :
+   INDICE : .price-period
+   - Couleur : #CBD5E1
+   - Font-size : 1rem
+*/
+
+.price-period {
+   color: #CBD5E1;
+   font-size: 1rem;
+}
+
+
+/* 
+   [SÉLECTEUR 70/120]
+   Déclaration CSS pour la liste des fonctionnalités :
+   INDICE : .pricing-features
+   - List-style : none
+   - Padding : 2rem 0
+*/
+.pricing-features {
+   list-style: none;
+   padding: 2rem 0;
+}
+
+/* 
+   [SÉLECTEUR 71/120]
+   Déclaration CSS pour chaque élément <li> DANS "pricing-features" :
+   - Display : flex
+   - Align-items : center
+   - Gap : 0.75rem
+*/
+.pricing-features li {
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+}
+
+/* 
+   [SÉLECTEUR 72/120]
+   Déclaration CSS pour les fonctionnalités INCLUSES :
+   - Couleur : #10B981 (vert)
+   - Padding : 0.75rem 0
+*/
+.pricing-features i {
+   color: #10B981;
+   padding: 0.75rem 0;
+}
+
+/* 
+   [SÉLECTEUR 73/120]
+   Déclaration CSS pour les fonctionnalités EXCLUES :
+   - Couleur : #64748B (gris)
+   - Padding : 0.75rem 0
+   - Opacity : 0.5
+*/
+.pricing-features.fa-times {
+   color: #64748B;
+   padding: 0.75rem 0;
+   opacity: 0.5;
+}
+
+
+/* 
+   [SÉLECTEUR 74/120]
+   Déclaration CSS pour le bouton de tarification :
+   INDICE : .pricing-button
+   - Display : block
+   - Width : 100%
+   - Padding : 1rem
+   - Background : #7C3AED
+   - Couleur : #F8FAFC
+   - Border-radius : 0.5rem
+   - Text-align : center
+   - Font-weight : 600
+   - Transition : 0.3s
+*/
+.pricing-button {
+   display: block;
+   width: 100%;
+   padding: 1rem;
+   background:#7C3AED;
+   color: #F8FAFC;
+   border-radius: 0.5rem;
+   text-align: center;
+   font-weight: 600;
+   transition: 0.3s;
+}
+
+
+/* 
+   [SÉLECTEUR 75/120]
+   Déclaration CSS pour le bouton au SURVOL :
+   - Background : #5B21B6
+   - Transform : translateY(-3px)
+*/
+.pricing-button:hover {
+   background: #5B21B6;
+   transform: translateY(-3px);
+}
+
+
+/* 
+   [SÉLECTEUR 76/120]
+   Déclaration CSS pour la note de tarification :
+   - Background : rgba(124, 58, 237, 0.1)
+   - Border-left : 4px solid #7C3AED
+   - Padding : 1rem 1.5rem
+   - Border-radius : 0.5rem
+   - Couleur : #CBD5E1
+*/
+.pricing-note {
+   background:rgba(124, 58, 237, 0.1);
+   border-left: 4px solid #7C3AED;
+   padding: 1rem 1.5rem;
+   border-radius: 0.5rem;
+   color: #CBD5E1;
+}
+
+
+/* ------------------------------------------------------------
+      Témoignages
+   ------------------------------------------------------------ */
+
+/* 
+   [SÉLECTEUR 77/120]
+   Déclaration CSS pour la section avec la classe "testimonials" :
+   - Couleur de fond : #0F172A
+*/
+.testimonials {
+   background-color: #0F172A;
+}
+
+/* 
+   [SÉLECTEUR 78/120]
+   Déclaration CSS pour la grille de témoignages" :
+   - Display : grid
+   - Grid-template-columns : repeat(3, 1fr)
+   - Gap : 2rem
+*/
+.testimonials-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+   padding-top: 2rem;
+}
+
+/* 
+   [SÉLECTEUR 79/120]
+   Déclaration CSS pour les cartes de témoignages :
+   - Couleur de fond : #1E293B
+   - Padding : 2rem
+   - Border-radius : 1rem
+   - Transition : 0.3s
+*/
+.testimonial-card {
+   background-color: #1E293B;
+   padding: 2rem;
+   border-radius: 1rem;
+   transition: 0.3s;
+}
+
+/* 
+   [SÉLECTEUR 80/120]
+   Déclaration CSS pour les cartes de témoignages au SURVOL :
+   - Transform : translateY(-5px)
+   - Box-shadow : 0 15px 30px rgba(0, 0, 0, 0.3)
+*/
+.testimonial-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 81/120]
+   Déclaration CSS pour les cartes de témoignages avec la classe "top" :
+
+   - Border-top : 3px solid #7C3AED
+*/
+.testimonial-card.top {
+   border-top: 3px solid #7C3AED;
+}
+
+/* 
+   [SÉLECTEUR 82/120]
+   Déclaration CSS pour la note de témoignage(étoiles) :
+   - Couleur : #F97316 (orange accent)
+   - Marge bottom : 1rem
+*/
+.testimonial-rating {
+   color: #F97316;
+   margin-bottom: 1rem;
+}
+
+/* 
+   [SÉLECTEUR 83/120]
+   Déclaration CSS pour le texte du témoignage :
+   INDICE : .testimonial-text
+   - Font-size : 0.9375rem (15px)
+   - Line-height : 1.7
+   - Couleur : #CBD5E1
+   - Marge bottom : 1.5rem
+   - Font-style : italic
+*/
+.testimonial-text {
+   font-size : 0.9375rem (15px);
+   line-height : 1.7;
+   color : #CBD5E1;
+   margin-bottom : 1.5rem;
+   font-style : italic;
+}
+
+/* 
+   [SÉLECTEUR 84/120]
+   Déclaration CSS pour la section de l'auteur du témoignage :
+   - Display : flex
+   - Align-items : center
+   - Gap : 1rem
+*/
+.testimonial-author {
+   display: flex;
+   align-items: center;
+   gap: 1rem  ;
+}
+
+/* 
+   [SÉLECTEUR 85/120]
+   Déclaration CSS pour l'avatar de l'auteur :
+   - Width et height : 50px
+   - Border-radius : 50% (cercle parfait)
+   - Border : 2px solid #7C3AED
+*/
+.author-avatar {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   border: 2px solid #7C3AED;
+}
+
+/* 
+   [SÉLECTEUR 86/120]
+   Déclaration CSS pour le nom de l'auteur :
+   - Display : block
+   - Couleur : #F8FAFC
+   - Font-weight : 600
+*/
+.author-name {
+   display: block;
+   color: #F8FAFC;
+   font-weight: 600;
+}
+
+/* 
+   [SÉLECTEUR 87/120]
+   Déclaration CSS pour la méta de l'auteur (poste, entreprise) :
+   INDICE : .author-meta
+   - Display : block
+   - Font-size : 0.875rem
+   - Couleur : #64748B (gris)
+*/
+
+.author-meta {
+   display: block;
+   font-size: 0.875rem;
+   color: #64748B;
+}
+
+
+/* ------------------------------------------------------------
+      Call To Action (CTA)
+   ------------------------------------------------------------ */
+
+
+/* 
+ [SÉLECTEUR 88/120]
+   Déclaration CSS pour la section avec la classe "cta" :
+   - Une couleur de fond dégradé linéaire de #5B21B6 à #7C3AED
+   - Position : relative
+   - Overflow : hidden
+*/
+.cta {
+   background: linear-gradient(#5B21B6, #7C3AED);
+}
+
+
+/* 
+ [SÉLECTEUR 89/120]
+   Déclaration CSS pour le contenu de la section "cta" :
+   - Padding : 4rem 0
+   - Z-index : 1
+   - en position relative 
+   - Alignement du texte au centre
+*/
+.cta-content {
+   padding: 4rem 0;
+   z-index: 1;
+   position: relative;
+   align-content: center;
+}
+
+/* 
+ [SÉLECTEUR 90/120]
+   Déclaration CSS pour le titre principal de la section "cta" :
+   - Font-size : 3rem
+   - Font-weight : bold
+   - Margin-bottom : 1rem
+*/
+.cta-title {
+   font-size: 3rem;
+   font-weight: bold;
+   margin-bottom: 1rem;
+}
+
+/* 
+ [SÉLECTEUR 91/120]
+   Déclaration CSS pour le texte descriptif de la section "cta" :
+   - Font-size : 1.25rem
+   - Couleur : #E9D5FF
+   - Margin-bottom : 2rem
+   - Max-width : 600px
+   - Centrer le texte horizontalement
+*/
+.cta-text {
+   font-size: 1.25rem;
+   color: #E9D5FF;
+   margin-bottom: 2rem;
+   max-width: 600px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/* 
+ [SÉLECTEUR 92/120]
+   Déclaration CSS pour le conteneur des boutons d'appel à l'action :
+   - Display : flex
+   - Gap : 1rem
+   - Justify-content : center
+   - Margin-bottom : 3rem
+*/
+.cta-buttons {
+   display: flex;
+   gap: 1rem;
+   justify-content: center;
+   margin-bottom: 3rem;
+}
+
+/* 
+ [SÉLECTEUR 93/120]
+   Déclaration CSS pour les boutons d'appel à l'action :
+   - Padding : 1rem 2rem
+   - Border-radius : 0.5rem
+   - Font-weight : 600
+   - Font-size : 1.125rem
+   - Transition : 0.3s
+*/
+.btn-cta {
+   padding: 1rem 2rem;
+   border-radius: 0.5rem;
+   font-weight: 600;
+   font-size: 1.125rem;
+   transition: 0.3s;
+}
+
+/* 
+ [SÉLECTEUR 94/120]
+   Déclaration CSS pour les boutons d'appel à l'action avec la classe "primary"
+   -Couleur de fond : #F8FAFC
+   - Couleur du texte : #5B21B6
+*/
+
+.btn-cta.primary {
+   background-color: #F8FAFC;
+   color: #5B21B6;
+}
+
+/* 
+    [SÉLECTEUR 95/120]
+       Déclaration CSS pour les boutons d'appel à l'action avec la classe "primary" au SURVOL
+       - Transform : translateY(-3px)
+       - Box-shadow : 0 10px 30px rgba(248, 250, 252, 0.3)
+ */
+ 
+ 
+ .btn-cta.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(248, 250, 252, 0.3);
+ }
+ 
+/* 
+  [SÉLECTEUR 96/120]
+    Déclaration CSS pour les boutons d'appel à l'action avec la classe "secondary"
+    - Couleur de fond : transparent
+    - Couleur du texte : #F8FAFC
+    - Border : 2px solid #F8FAFC
+ */
+ 
+ .btn-cta.secondary {
+    background-color: transparent;
+    color: #F8FAFC;
+    border: 2px solid #F8FAFC;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 97/120]
+       Déclaration CSS pour les boutons d'appel à l'action avec la classe "secondary" au SURVOL
+       - Couleur de fond : #F8FAFC
+       - Couleur du texte : #5B21B6
+ */
+ .btn-cta.secondary:hover {
+    background-color: #F8FAFC;
+    color: #5B21B6;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 98/120]
+    Déclaration CSS pour les informations complémentaires sous les boutons :
+    - Display : flex
+    - Justify-content : center
+    - Gap : 3rem
+    - Flex-wrap : wrap (pour que ça passe à la ligne sur mobile)
+ */
+ .cta-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 99/120]
+    Déclaration CSS pour chaque élément d'information (info-item) :
+    - Display : flex
+    - Align-items : center
+    - Gap : 0.75rem
+    - Couleur : #E9D5FF
+ */
+ .info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #E9D5FF;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 100/120]
+    Déclaration CSS pour les icônes DANS chaque élément d'information (info-item) :
+ 
+    - Taille de police : 1.25rem
+ */
+ .info-item i {
+    font-size: 1.25rem;
+ }
+ 
+ 
+ /* ------------------------------------------------------------
+    Footer
+    ------------------------------------------------------------ */
+ 
+ /* 
+    [SÉLECTEUR 101/120]
+    Déclaration CSS pour le footer du site
+    - Background : #1E293B
+    - Padding : 3rem 0 1rem
+ */
+ footer{
+    background-color: #1E293B;
+    padding: 3rem 0 1rem;
+ }
+ 
+ /* 
+    [SÉLECTEUR 102/120]
+    Déclaration CSS pour la classe "footer-content" :
+    - affichage en grid
+    - nombre de colonnes : 2fr 1fr 1fr 1fr
+    - ecarts entre les colonnes : 3rem
+    - Marge extérieure en bas : 2rem
+ */
+ .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+ }
+ 
+ /* 
+    [SÉLECTEUR 103/120]
+    Déclaration CSS pour les titres dans le footer :
+ 
+    - Font-size : 1.25rem
+    - Font-weight : bold
+    - Margin-bottom : 1rem
+    - Couleur : #F8FAFC
+ */
+footer h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #F8FAFC;
+ }
+ 
+ /* 
+    [SÉLECTEUR 104/120]
+    Déclaration CSS pour les descriptions dans le footer :
+    - Couleur : #CBD5E1
+    - Line-height : 1.7
+    - Margin-bottom : 1.5rem
+ */
+ 
+ .footer-description{
+    color: #CBD5E1;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 105/120]
+    Déclaration CSS pour les liens sociaux :
+    - Display : flex
+    - Gap : 0.5rem
+ */
+ .social-links {
+    display: flex;
+    gap: 0.5rem;
+ }
+ 
+ /* 
+    [SÉLECTEUR 106/120]
+    Déclaration CSS pour CHAQUE lien social :
+    - Display : inline-flex
+    - Width et height : 2.5rem
+    - Border-radius : 50%
+    - Background : #7C3AED
+    - Couleur : #F8FAFC
+    - Justify-content et align-items : center
+    - Margin-right : 0.5rem
+    - Transition : 0.3s
+ */
+ .social-link {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #7C3AED;
+    color: #F8FAFC;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    transition: 0.3s;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 107/120]
+    Déclaration CSS pour les liens sociaux au SURVOL :
+ 
+    - Transform : translateY(-3px) rotate(360deg)
+    - Background : #5B21B6
+ */
+ .social-link:hover{
+    transform: translateY(-3px) rotate(360deg);
+    background-color: #5B21B6;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 108/120]
+    Déclaration CSS pour les listes de liens dans le footer :
+ 
+    - List-style : none
+ */
+ .footer-links {
+    list-style: none;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 109/120]
+    Déclaration CSS pour CHAQUE élément <li> DANS "footer-links" :
+    - Margin-bottom : 0.75rem
+ */
+ .footer-links li {
+    margin-bottom: 0.75rem;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 110/120]
+    Déclaration CSS pour les liens hypertextes DANS "footer-links" :
+ 
+    - Couleur : #CBD5E1
+    - Transition : 0.3s
+ */
+ .footer-links a {
+    color: #CBD5E1;
+    transition: 0.3s;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 111/120]
+    Déclaration CSS pour les liens hypertextes au SURVOL DANS "footer-links" :
+ 
+    - Couleur : #7C3AED
+    - Padding-left : 0.5rem (décalage à gauche pour l'effet de mouvement)
+ */
+ .footer-links a:hover {
+    color: #7C3AED;
+    padding-left: 0.5rem;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 112/120]
+    Déclaration CSS pour le texte de la newsletter :
+    - Couleur : #CBD5E1
+    - Margin-bottom : 1rem
+ */
+ .newsletter-text {
+    color: #CBD5E1;
+    margin-bottom: 1rem;
+ }
+ 
+ /* 
+    [SÉLECTEUR 113/120]
+    Déclaration CSS pour le formulaire de la newsletter :
+ 
+    - Display : flex
+    - Gap : 0.5rem
+ */
+ .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+ }
+ 
+ /* 
+    [SÉLECTEUR 114/120]
+    Déclaration CSS pour le champ input de la newsletter :
+ 
+    - Flex : 1 (pour qu'il prenne tout l'espace disponible)
+    - Padding : 0.75rem
+    - Background : #0F172A
+    - Border : 1px solid #334155
+    - Border-radius : 0.5rem
+    - Couleur du texte : #F8FAFC
+    - Outline : none (pour enlever le contour par défaut au focus)
+ */
+ .newsletter-input {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: #0F172A;
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    color: #F8FAFC;
+    outline: none;
+ }
+ 
+ /* 
+    [SÉLECTEUR 115/120]
+    Déclaration CSS pour le champ input de la newsletter au FOCUS :
+    INDICE : .newsletter-input:focus
+    - Border-color : #7C3AED
+ */
+ 
+ .newsletter-input:focus {
+    border-color: #7C3AED;
+ }
+ 
+ 
+ /* 
+    [SÉLECTEUR 116/120]
+    Déclaration CSS pour le bouton d'envoi de la newsletter :
+ 
+    - Padding : 0.75rem 1.25rem
+    - Background : #7C3AED
+    - Couleur du texte : #F8FAFC
+    - Border : none
+    - Border-radius : 0.5rem
+    - Cursor : pointer
+    - Transition : 0.3s
+ */
+ .newsletter-button {
+    padding: 0.75rem 1.25rem;
+    background-color: #7C3AED;
+    color: #F8FAFC;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+ }
+ 
+ /* 
+    [SÉLECTEUR 117/120]
+    Déclaration CSS pour le bouton d'envoi de la newsletter au SURVOL :
+ 
+    - Background : #5B21B6
+ */
+ .newsletter-button:hover {
+    background-color: #5B21B6;
+ }
+ 
+ /* 
+    [SÉLECTEUR 118/120]
+    Déclaration CSS pour la partie basse du footer (footer-bottom) :
+    - Text-align : center
+    - Padding-top : 2rem
+    - Border-top : 1px solid #334155
+    - Couleur : #CBD5E1
+    - Font-size : 0.875rem
+ */
+ .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #334155;
+    color: #CBD5E1;
+    font-size: 0.875rem;
+ }
+ 
+ /* 
+    [SÉLECTEUR 119/120]
+    Déclaration CSS pour les icônes de cœur dans le footer-bottom :
+ 
+    - Couleur : #EF4444 (rouge)
+    - Animation : heartbeat 1s infinite
+ */
+ .fas.fa-heart{
+    color: #EF4444;
+    animation: heartbeat 1s infinite;
+ }
+ 
+ @keyframes heartbeat {
+ 
+    0%,
+    100% {
+       transform: scale(1);
+    }
+ 
+    50% {
+       transform: scale(1.2);
+    }
+ }
+
+
+@media screen and (max-width: 480px) {
+   .navbar {
+      max-width: 480px;
+   }
+   .nav-links {
+      gap: 0;
+   }
+   .logo-text {
+      display:block;
+      font-size: 100%;
+      text-align: left;
+      flex-flow: column wrap;
+   }
+   
+}
